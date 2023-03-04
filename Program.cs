@@ -38,48 +38,52 @@
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
 // значения b1, k1, b2 и k2 задаются пользователем.
 
-// Console.WriteLine("Ищем точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2");
-// Console.Write("Введите целое число k1: ");
-// int k1 = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите целое число b1: ");
-// int b1 = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите целое число k2: ");
-// int k2 = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите целое число b2: ");
-// int b2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ищем точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2");
+Console.Write("Введите целое число k1: ");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите целое число b1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите целое число k2: ");
+int k2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите целое число b2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
 
-// double[] point = IntersectionLine(k1, b1, k2, b2);
-// Console.WriteLine($"Точка пересечения ({String.Join("; ", point)})");
+if (k1 == k2) Console.WriteLine("Прямые параллельны");
+else
+    {
+    double[] point = IntersectionLine(k1, b1, k2, b2);
+    Console.WriteLine($"Точка пересечения ({String.Join("; ", point)})");
+    }
 
 
-// double[] IntersectionLine(int k1, int b1, int k2, int b2)
-// {
-//     double[] intersectionLine = new double[2];
-//     intersectionLine[0] = (Convert.ToDouble(b2 - b1)) / (k1 - k2);
-//     intersectionLine[1] = k1 * intersectionLine[0] + b1;
-//     return intersectionLine;
-// }
+double[] IntersectionLine(int k1, int b1, int k2, int b2)
+{
+    double[] intersectionLine = new double[2];
+    intersectionLine[0] = (Convert.ToDouble(b2 - b1)) / (k1 - k2);
+    intersectionLine[1] = k1 * intersectionLine[0] + b1;
+    return intersectionLine;
+}
 
 
 
 // Перевести число в двоичное
 
-Console.Write("Введите целое число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите целое число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(TransformBinary(number));
+// Console.WriteLine(TransformBinary(number));
 
-string TransformBinary(int num)
-{
-    string result = "";
-    while (num>=1)
-    {
-        int rem = num % 2;
-        num = num / 2;
-        result = Convert.ToString(rem) + result;
-    }
-    return result;
-}
+// string TransformBinary(int num)
+// {
+//     string result = "";
+//     while (num>=1)
+//     {
+//         int rem = num % 2;
+//         num = num / 2;
+//         result = Convert.ToString(rem) + result;
+//     }
+//     return result;
+// }
 
 
 
